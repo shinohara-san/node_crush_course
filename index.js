@@ -48,15 +48,18 @@ const server = http.createServer((req, res) => {
       contentType = "image/jpg";
       break;
   }
+
+  if (contentType == "text/html" && extname == "") filePath += ".html";
+  
   //Read file
   fs.readFile(filePath, (err, content) => {
     if (err) {
       if (err.code == "ENOENT") { //エラーコードがENOENTだったら404.htmlを表示
         //Page Not Found
         fs.readFile(path.join(__dirname, "public", "404.html"), (err, content) => {
-          res.writeHead(200, { "Content-Type": "text/html" });
+          res.writeHead(404, { "Content-Type": "text/html" });
           res.end(content)
-        })
+        });
       } else {
         //Some server error 500
         res.writeHead(500);
