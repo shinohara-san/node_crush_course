@@ -1,18 +1,18 @@
 {
   "name": "node_crash_course",
   "version": "1.0.0",
-  "description": "Node crash course",
+  "description": "node crash course by traversy",
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "nodemon index" 
   },
-  "author": "Brad Traversy",
+  "author": "yuki shinohara",
   "license": "ISC",
   "dependencies": {
-    "uuid": "^3.3.2"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.7"
   }
 }
