@@ -71,7 +71,7 @@ const server = http.createServer((req, res) => {
 
 });
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 //ポート番号はホストが状況によって決める or 5000
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(port, () => console.log(`Server running on port ${PORT}`));
