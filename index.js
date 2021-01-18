@@ -1,7 +1,7 @@
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
-const { restart } = require("nodemon");
+// const { restart } = require("nodemon");
 
 const server = http.createServer((req, res) => {
   // console.log(req.url);
@@ -49,7 +49,7 @@ const server = http.createServer((req, res) => {
       break;
   }
 
-  if (contentType == "text/html" && extname == "") filePath += ".html";
+  // if (contentType == "text/html" && extname == "") filePath += ".html";
   
   //Read file
   fs.readFile(filePath, (err, content) => {
@@ -74,7 +74,7 @@ const server = http.createServer((req, res) => {
 
 });
 
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 //ポート番号はホストが状況によって決める or 5000
 
-server.listen(port, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
